@@ -3,6 +3,12 @@
 #include <string>
 #include <vector>
 
+#ifdef _DEBUG
+	#define LOG(x) std::cout << x << std::endl;
+#else
+	#define LOG(x)
+#endif
+
 struct STUDENT_DATA
 {
 	std::string firstname;
@@ -38,6 +44,7 @@ int main() {
 		// push student object into vector space
 		students.push_back(student);
 
+		LOG("First Name: " << firstname << ", Last Name: " << lastname)
 	}
 
 	inputFile.close();
